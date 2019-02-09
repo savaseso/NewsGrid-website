@@ -9,7 +9,7 @@
 }
 
 .category {
-    --sports-color:##f99500;
+    --sports-color:#f99500;
     --ent-color:#a66bbe;
     --tech-color:#009cff;
 
@@ -52,6 +52,45 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
+.category {
+    display: inline-block;
+    color: #fff;
+    font-size:0.55rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem;
+    border-radius: 15px;
+    margin-bottom:0.5rem
+}
+
+.category-sports {background: var(--sports-color);}
+.category-ent {background: var(--ent-color);}
+.category-tech {background: var(--tech-color);}
+
+
+.btn {
+    display: inline-block;
+    border:none;
+    background: var(--dark-color);
+    color:#fff;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-light {background: var(--light-color)}
+.btn-primary {background: var(--primary-color)}
+.btn-secondary {background: var(--secondary-color)}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+
+/*navigation*/
 #main-nav {                 /*nav-bar Id*/
     background:#fff;
     position: sticky;       /*              */
@@ -88,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #main-nav .container ul li a.current:hover {   
     background: var(--light-color);
-    color:#333;
+    color:var(--dark-color);
 }
 /*icons*/
 #main-nav .social {
@@ -103,3 +142,43 @@ h1, h2, h3, h4, h5, h6 {
 #main-nav .social i:hover {
     transform: scale(1.3);
 }
+
+/*showcase*/
+
+#showcase {
+/*     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('/img/featured.jpg');  /*one solution for give a layout*/
+/*    background-position: center; 
+    background-size: cover; */
+    background:#333;
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+}
+
+#showcase:before {
+    content: '';
+    background: url('/img/featured.jpg') no-repeat center center/cover;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+#showcase .showcase-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;   /*ezert vastag a kep*/
+}
+
+#showcase .showcase-content {
+    z-index: 1;                                     /*img felül*/
+}
+
+
+#showcase .showcase-content p {
+    margin-bottom: 1rem;
+}
+
